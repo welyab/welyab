@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Robotics</title>
+        <script src="math-operations.js"></script>
+        <script src="canvas-lib.js"></script>
+        <script src="graphic-lib.js"></script>
+        <script src="bicycle-kinematics.js"></script>
+        <style>
+            body {
+                background-color: #e6e6e6;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="world" 
+                width="800" 
+                height="600" 
+                style="border:1px solid #717171; background-color: white;">
+        </canvas>
+        <script>
+            let bk = new BicycleKinematics()
+            let canvas = new CanvasLib(
+                canvasId = "world",
+                loopFunction = bk.update.bind(bk),
+                backgroundColor = "white"
+            ).start()
+        </script>
+    </body>
+</html>
